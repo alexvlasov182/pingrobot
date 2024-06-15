@@ -1,3 +1,3 @@
-module github.com/alexvlasov182/http/pingrobot/backend
+module github.com/alexvlasov182/pingrobot
 
 go 1.22.1
