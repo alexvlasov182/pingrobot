@@ -1,0 +1,27 @@
+# Node.js
+/frontend/node_modules
+/frontend/build
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+**/vendor/
+**/venv/
+**/__pycache__/
+
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Go workspace
+/bin/
+/pkg/
+/coverage.out
+
+# DS_Store
+.DS_Store
