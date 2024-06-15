@@ -9,8 +9,8 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/alexvlasov182/pingrobot/backend/handlers"
-	"github.com/alexvlasov182/pingrobot/backend/workerpool"
+	"github.com/alexvlasov182/http/pingrobot/backend/handlers"
+	"github.com/alexvlasov182/http/pingrobot/backend/workerpool"
 )
 
 const (
