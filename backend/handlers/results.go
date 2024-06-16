@@ -1,19 +1,25 @@
 package handlers
 
 import (
-	"encoding/json"
 	"net/http"
 
-	"github.com/alexvlasov182/http/pingrobot/backend/workerpool"
+	"github.com/alexvlasov182/http/pingrobot/backend/backend/workerpool"
+	"github.com/gin-gonic/gin"
 )
 
-func ResultsHandler(results chan workerpool.Result) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		var res []workerpool.Result
+func ResultsHandler(results chan workerpool.Result) gin.HandlerFunc {
+
+	return func(c *gin.Context) {
+		var resultsList []gin.H
 		for result := range results {
-			res = append(res, result)
+			resultsList = append(resultsList, gin.H{
+				"url":    result.URL,
+				"status": result.StatusCode,
+				"time":   result.ResponseTime.String(),
+			})
 		}
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(res)
+		c.JSON(http.StatusOK, gin.H{
+			"results": resultsList,
+		})
 	}
 }

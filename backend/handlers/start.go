@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/alexvlasov182/http/pingrobot/backend/workerpool"
+	"github.com/alexvlasov182/http/pingrobot/backend/backend/workerpool"
 )
 
 func StartHandler(wp *workerpool.Pool) http.HandlerFunc {
